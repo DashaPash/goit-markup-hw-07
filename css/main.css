@@ -38,7 +38,6 @@ img {
 
 body {
   background-color: var(--white-color);
-
   font-family: Roboto, sans-serif;
   color: var(--text-color);
   letter-spacing: 0.03em;
@@ -54,16 +53,25 @@ body {
   margin-bottom: 0px;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-/*-----------------Компоненты--------------*/
-
 .logo {
   display: inline-block;
-
   font-family: Raleway;
   font-weight: 700;
   font-size: 26px;
@@ -71,25 +79,8 @@ body {
   text-decoration: none;
 }
 
-.logo__logo-accent,
-.menu-nav__link:hover,
-.menu-nav__link:focus,
-.menu-nav__link_active,
-.menu-nav__item .nav-link.activ-page-portfolio,
-.header__contact-link:hover,
-.header__contact-link:focus,
-.studio-contact__mail:hover,
-.studio-contact__mail:focus,
-.studio-contact__phone-number:hover,
-.studio-contact__phone-number:focus {
-  color: var(--blue-accent);
-}
-
-.about__title,
-.team__title,
-.client-section__title {
+.about__title, .team__title, .client-section__title {
   color: var(--title-text-color);
-
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
@@ -106,9 +97,19 @@ body {
   border-radius: 50% 50%;
 }
 
-/*----------------Компоненты конец---------*/
+.logo__logo-accent,
+.menu-nav__link:hover,
+.menu-nav__link:focus,
+.menu-nav__link_active,
+.header__contact-link:hover,
+.header__contact-link:focus,
+.studio-contact__mail:hover,
+.studio-contact__mail:focus,
+.studio-contact__phone-number:hover,
+.studio-contact__phone-number:focus {
+  color: var(--blue-accent);
+}
 
-/*--------------- Шапка сайта-------------*/
 .header {
   border-bottom: 1px solid #ececec;
 }
@@ -146,16 +147,18 @@ body {
 .menu-nav__link,
 .header__contact-link {
   position: relative;
-
   padding-top: 32px;
   padding-bottom: 34px;
-
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-
   transition: color 250ms var(--cubic-bezier);
+}
+
+.menu-nav__link {
+  color: var(--title-text-color);
+  text-decoration: none;
 }
 
 .menu-nav__link_active:after {
@@ -163,17 +166,10 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
-
   width: 100%;
   height: 4px;
-
   border-radius: 2px;
   background-color: var(--blue-accent);
-}
-
-.menu-nav__link {
-  color: var(--title-text-color);
-  text-decoration: none;
 }
 
 .header__contact {
@@ -188,25 +184,22 @@ body {
   margin-right: 10px;
 }
 
-.header__nav-icon_margin {
-  margin-right: 10px;
-}
-
 .header__nav-icon:hover {
   fill: var(--blue-accent);
+}
+
+.header__nav-icon_margin {
+  margin-right: 10px;
 }
 
 .header__contact-item_margin {
   margin-left: 50px;
 }
 
-.header__contact-link,
 .header__contact-link {
   color: var(--text-color);
   text-decoration: none;
 }
-
-/*--------------- Секция Герой-------------*/
 
 .hero {
   text-align: center;
@@ -216,13 +209,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: #c4c4c4;
-  background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url(../images/studio-page/hero-img.jpg);
-
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/studio-page/hero-img.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -230,42 +217,33 @@ body {
 
 .hero__title {
   color: var(--white-color);
-
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-
   padding-bottom: 30px;
 }
 
 .hero__button {
   background-color: var(--blue-accent);
   color: var(--white-color);
-
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-
   padding: 10px 32px;
   border-radius: 4px;
   min-width: 200px;
   border-color: transparent;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-
   transition: background-color 250ms var(--cubic-bezier);
 }
 
 .hero__button:hover {
   background-color: #188ce8;
 }
-
-/*--------------- Секция Герой Конец -------------*/
-
-/*-------------------- Секция особенности------------- */
 
 .features__list {
   display: flex;
@@ -282,7 +260,6 @@ body {
 .features__icon-bg {
   background: var(--grey-background-color);
   border-radius: 4px;
-
   width: 270px;
   padding: 25px 100px;
   margin-bottom: 30px;
@@ -290,7 +267,6 @@ body {
 
 .features__title {
   color: var(--title-text-color);
-
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -303,9 +279,6 @@ body {
   margin-top: 10px;
 }
 
-/*-------------------- Секция Особенности Конец------------- */
-
-/*--------------------Секция Чем Мы Занимаемся---------------*/
 .about {
   padding-top: 0px;
 }
@@ -337,15 +310,11 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   text-align: center;
-
   padding-top: 27px;
   padding-bottom: 27px;
   color: var(--white-color);
 }
 
-/*--------------------Секция Чем Мы Занимаемся Конец---------------*/
-
-/*--------------------Секция Наша Команда--------------------------*/
 .team {
   background-color: var(--grey-background-color);
 }
@@ -360,9 +329,7 @@ body {
 
 .team__item {
   background-color: var(--white-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
@@ -380,16 +347,14 @@ body {
 
 .team__name {
   color: var(--title-text-color);
-
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
   padding-bottom: 10px;
 }
 
-.tea__text {
+.team__text {
   color: var(--text-color);
-
   font-size: 16px;
   line-height: 1.18;
   padding-bottom: 16px;
@@ -402,18 +367,15 @@ body {
 
 .social-links__link {
   background-color: var(--white-color);
-
   transition: background-color 250ms var(--cubic-bezier);
 }
 
-.social-links__link:hover,
-.social-links__link:focus {
+.social-links__link:hover, .social-links__link:focus {
   background-color: var(--blue-accent);
 }
 
 .social-links__icon {
   fill: var(--icons-border-color);
-
   transition: fill 250ms var(--cubic-bezier);
 }
 
@@ -421,10 +383,6 @@ body {
 .social-links__link:focus .social-links__icon {
   fill: var(--white-color);
 }
-
-/*--------------------Секция Наша Команда Конец--------------------------*/
-
-/*--------------------Секция Постоянные Клиенты---------------*/
 
 .client-section__title {
   padding-bottom: 50px;
@@ -446,18 +404,15 @@ body {
   height: 92px;
   border: 1px solid var(--icons-border-color);
   border-radius: 4px;
-
   transition: border-color 250ms var(--cubic-bezier);
 }
 
-.client-section__link:hover,
-.client-section__link:focus {
+.client-section__link:hover, .client-section__link:focus {
   border-color: var(--blue-accent);
 }
 
 .client-section__icon {
   fill: var(--icons-border-color);
-
   transition: fill 250ms var(--cubic-bezier);
 }
 
@@ -465,10 +420,6 @@ body {
 .client-section__link:focus .client-section__icon {
   fill: var(--blue-accent);
 }
-
-/*--------------------Секция Постоянные Клиенты Конец---------------*/
-
-/*---------------------------Футер----------------*/
 
 .footer {
   background-color: var(--dark-background-color);
@@ -514,7 +465,6 @@ body {
 .studio-contact__phone-number {
   color: var(--white-transparent-color);
   text-decoration: none;
-
   transition: color 250ms var(--cubic-bezier);
 }
 
@@ -524,7 +474,6 @@ body {
   line-height: 16px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-
   color: var(--white-color);
   padding-bottom: 20px;
 }
@@ -542,8 +491,7 @@ body {
   transition: background-color 250ms var(--cubic-bezier);
 }
 
-.social-contact__link:hover,
-.social-contact__link:focus {
+.social-contact__link:hover, .social-contact__link:focus {
   background-color: var(--blue-accent);
 }
 
@@ -573,16 +521,13 @@ body {
   font-size: 16px;
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.6);
-
   height: 50px;
   width: 358px;
   padding: 15px 0px 15px 15px;
-
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background-color: var(--dark-background-color);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-
   transition: border 250ms var(--cubic-bezier);
 }
 
@@ -590,8 +535,7 @@ body {
   margin-right: 12px;
 }
 
-.subscription-form__input:hover,
-.subscription-form__input:focus {
+.subscription-form__input:hover, .subscription-form__input:focus {
   border: 1px solid var(--blue-accent);
   outline: none;
 }
@@ -602,24 +546,19 @@ body {
   line-height: 1.87;
   letter-spacing: 0.06em;
   color: var(--white-color);
-
   display: flex;
   align-items: center;
-
   padding: 10px 10px 10px 29px;
   width: 200px;
   height: 50px;
-
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   background-color: var(--blue-accent);
   border: 1px solid transparent;
-
   transition: background-color 250ms var(--cubic-bezier);
 }
 
-.subscription-form__btn:focus,
-.subscription-form__btn:hover {
+.subscription-form__btn:focus, .subscription-form__btn:hover {
   background-color: #188ce8;
 }
 
@@ -627,29 +566,26 @@ body {
   margin-left: 10px;
 }
 
-/*---------------------------Футер Конец----------------*/
-
-/*=======================Оформление Страницы Потрфолио==================*/
-
-/*-----------------------Кнопки Фильтра--------------------*/
 .main-section__filter-button {
   background-color: var(--grey-background-color);
   color: var(--title-text-color);
-
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
   cursor: pointer;
-
   display: inline-block;
   border-radius: 4px;
   border-color: transparent;
-
   padding: 6px 22px 6px 22px;
-
   transition: background-color 250ms var(--cubic-bezier);
+}
+
+.main-section__filter-button:hover, .main-section__filter-button:focus {
+  background-color: var(--blue-accent);
+  color: var(--white-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .main-section__filter-list {
@@ -661,18 +597,6 @@ body {
 .main-section__filter-item + .main-section__filter-item {
   margin-left: 8px;
 }
-
-.main-section__filter-button:hover,
-.main-section__filter-button:focus {
-  background-color: var(--blue-accent);
-  color: var(--white-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-}
-
-/*-----------------------Кнопки Фильтра Конец--------------------*/
-
-/*-----------------------Примеры Проектов--------------------*/
 
 .project {
   display: flex;
@@ -691,10 +615,8 @@ body {
   margin-top: 30px;
 }
 
-.project__item:hover,
-.project__item:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+.project__item:hover, .project__item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-link__thumb {
@@ -708,13 +630,11 @@ body {
   height: 100%;
   top: 0px;
   left: 0px;
-
   font-size: 18px;
   line-height: 1.5;
   color: var(--white-color);
   padding: 63px 24px;
   overflow: auto;
-
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
   transition: transform 250ms var(--cubic-bezier);
@@ -732,25 +652,19 @@ body {
 
 .project-link__title {
   color: var(--title-text-color);
-
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-
   margin-bottom: 4px;
 }
 
 .project-link__text {
   color: var(--text-color);
-
   font-size: 16px;
   line-height: 1.87;
 }
-/*-----------------------Примеры Проектов Конец--------------------*/
-
-/*-------------------------Модальное Окно---------------------------*/
 
 .backdrop {
   position: fixed;
@@ -759,10 +673,8 @@ body {
   top: 0;
   left: 0;
   z-index: 100;
-
   background-color: rgba(0, 0, 0, 0.2);
-  transition: opacity 250ms var(--cubic-bezier),
-    visibility 250ms var(--cubic-bezier);
+  transition: opacity 250ms var(--cubic-bezier), visibility 250ms var(--cubic-bezier);
 }
 
 .is-hidden {
@@ -775,12 +687,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-
   width: 528px;
   height: 581px;
   background-color: var(--white-color);
   border-radius: 4px;
-
   transform: translate(-50%, -50%);
 }
 
@@ -790,11 +700,9 @@ body {
   right: 8px;
   width: 30px;
   height: 30px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: var(--white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
@@ -806,8 +714,7 @@ body {
   transition: fill 250ms var(--cubic-bezier);
 }
 
-.modal-window__close-icon:hover,
-.modal-window__close-icon:focus {
+.modal-window__close-icon:hover, .modal-window__close-icon:focus {
   fill: var(--blue-accent);
 }
 
@@ -901,17 +808,6 @@ body {
   align-items: center;
 }
 
-.visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
-}
-
 .modal-form__checkbox-input:checked + .fmodal-form__icon-window {
   background-image: url("../images/studio-page/icon-check.svg");
   fill: transparent;
@@ -937,24 +833,18 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-color: transparent;
-
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-
   color: var(--white-color);
-
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
-
   transition: background-color 250ms var(--cubic-bezier);
 }
 
-.modal-form__btn:hover,
-.modal-form__btn:focus {
+.modal-form__btn:hover, .modal-form__btn:focus {
   background-color: #188ce8;
 }
-
-/*-------------------------Модальное Окно Конец---------------------------*/ ;
+/*# sourceMappingURL=main.css.map */
